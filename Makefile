@@ -1,13 +1,24 @@
 
+NAME = libftprintf.a
+SRC = prinft_string.c	printf_char.c	printf_nbr.c	printf_hex.c \	    printf_unsg.c
 CC = cc
 FLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
-all = $(NAME)
+OBJ = $(SRC:.c=.o)
+	
+all: $(NAME)
 
-clean = rf - f 
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-fclean = rf -f
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-re = clean fclean
+clean:
+	rf - r $(OBJ) 
 
-.PHONY = all
+fclean : clean
+	rf - r $(NAME)
+
+re: clean all
+
+.PHONY: all

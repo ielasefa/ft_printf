@@ -20,12 +20,3 @@ void ft_putnbr_ungned_fb(unsigned int nb, size_t *count)
 	}
 	ft_putchar_fb(nb % 10 + '0' , count);
 }
-int main() 
-{
-    unsigned int nb = 12;
-    size_t count = 0;
-    ft_putnbr_ungned_fb(nb, &count);
-    printf("\nCharacter count: %zu\n", count);
-
-    return 0;
-}
