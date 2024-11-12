@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/10/24 09:40:34 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/07 22:07:52 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "libft.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+
 {
-	if(!s)
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
+		if (s1[i] != s2[i])
+		{
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		}
+		i++;
 	}
+	return (0);
 }

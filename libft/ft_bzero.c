@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/10/24 09:42:51 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/05 23:39:40 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "libft.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+void	ft_bzero(void *s, size_t n)
 {
-	if(!s)
-	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
-	}
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	ft_memset(ptr, 0, n);
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/11/05 13:13:57 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/05 23:42:57 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "libft.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+int	ft_lstsize(t_list *lst)
 {
-	if(!s)
+	int	count;
+
+	count = 0;
+	while (lst != NULL)
 	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
+		count++;
+		lst = lst->next;
 	}
+	return (count);
 }

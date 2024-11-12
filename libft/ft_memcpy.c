@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/10/24 09:45:12 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/05 23:43:49 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "libft.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if(!s)
+	char		*d;
+	const char	*s = src;
+	size_t		i;
+
+	if (!dst && !src)
+		return (NULL);
+	d = dst;
+	i = 0;
+	while (i < n)
 	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
+		d[i] = s[i];
+		i++;
 	}
+	return (dst);
 }

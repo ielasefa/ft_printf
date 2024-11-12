@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/10/24 09:41:47 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/05 23:50:59 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "libft.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+char	*ft_strrchr(const char *s, int c)
 {
-	if(!s)
+	int	i;
+
+	i = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	while (i >= 0)
 	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
+		if (s[i] == (char)c)
+		{
+			return ((char *)s + i);
+		}
+		i--;
 	}
+	return (NULL);
 }
