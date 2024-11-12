@@ -14,10 +14,10 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
-	rf - r $(OBJ) 
+	rf - rf $(OBJ) 
 
 fclean : clean
-	rf - r $(NAME)
+	rf - rf $(NAME)
 
 re: clean all
 
