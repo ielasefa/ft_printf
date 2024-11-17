@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_char.c                                   :+:      :+:    :+:   */
+/*   printf_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:10:01 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:22:35 by iel-asef         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:04:12 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void ft_putchar_fb(char c , size_t *count)
+int	ft_putchar_fb(char c)
 {
-	write( 1 , &c , 1);
-	(*count)++;
+	write(1, &c, 1);
+	return (1);
 }

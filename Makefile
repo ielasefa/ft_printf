@@ -1,24 +1,22 @@
 
-NAME = libftprintf.a
-SRC = prinft_string.c	printf_char.c	printf_nbr.c	printf_hex.c \	    printf_unsg.c
-CC = cc
-FLAGS = -Wall -Wextra -Werror
+NAME = libftprintf.a 
+SRC =     ft_printf.c   printf_add.c    printf_char.c \
+		printf_hex.c    printf_nbr.c    printf_string.c  printf_unsg.c
+CC = cc 
+CFLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
-	
-all: $(NAME)
+all : $(NAME)
 
-%.o : %.c
+$(NAME) : $(OBJ) 
+	ar rcs $(NAME) $(OBJ)	
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+clean : 
+	rm -f $(OBJ)
+	
+fclean : clean 
+	rm -f $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+re : fclean all
 
-clean:
-	rf - rf $(OBJ) 
-
-fclean : clean
-	rf - rf $(NAME)
-
-re: clean all
-
-.PHONY: all
+.PHONY : all clean fclean re

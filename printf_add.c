@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft_string.c                                 :+:      :+:    :+:   */
+/*   printf_add.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:26:59 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/12 16:25:33 by iel-asef         ###   ########.fr       */
+/*   Created: 2024/11/13 20:10:09 by iel-asef          #+#    #+#             */
+/*   Updated: 2024/11/17 18:56:21 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include "ft_printf.h"
 
-void ft_putstr_fb(char *s , size_t  *count)
+int	ft_printf_add_fb(void *ptr)
 {
-	if(!s)
+	int				len;
+	unsigned long	n;
+
+	n = (unsigned long)ptr;
+	len = 0;
+	if (n == 0)
 	{
-		ft_putstr_fb("NULL" , count);
-		return;
-	}	
-	while(*s)
-	{
-		ft_putchar_fb(*s, count);
-		s++;
+		ft_putstr_fb("0x0");
+		return (3);
 	}
+	ft_putstr_fb("0x");
+	len += ft_printf_hex_fb(n, 'x') + 2;
+	return (len);
 }
