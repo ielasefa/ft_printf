@@ -6,7 +6,7 @@
 /*   By: iel-asef <iel-asef@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:31:26 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/17 18:49:31 by iel-asef         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:13:04 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	print_fb(const char format, va_list args)
 
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (format == 'd' || format == 'i')
@@ -38,9 +38,9 @@ static int	print_fb(const char format, va_list args)
 int	ft_printf(const char *format, ...)
 
 {
-	int len;
-	int i;
-	va_list args;
+	int		len;
+	int		i;
+	va_list	args;
 
 	len = 0;
 	i = 0;
