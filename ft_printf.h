@@ -6,7 +6,7 @@
 /*   By: iel-asef <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:57:05 by iel-asef          #+#    #+#             */
-/*   Updated: 2024/11/17 20:11:32 by iel-asef         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:35:31 by iel-asef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stddef.h>
 # include <unistd.h>
 
-int	tft_printf(const char *format, ...);
+int	ft_printf(const char *format, ...);
 int	ft_putchar_fb(char c);
 int	ft_putstr_fb(char *s);
 int	ft_putnbr_fb(int n);
